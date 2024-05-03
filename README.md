@@ -16,3 +16,7 @@ npm install @truffle/hdwallet-provider
 
 //open browser and go to infura.io
 //create an account/log in, create a new project on ethereum
+
+npm install uws //install uWebSockets (uWs) library in my Node.js project
+
+truffle migrate --network sepolia //to try and deploy the contract

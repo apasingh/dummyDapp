@@ -41,6 +41,7 @@
  * https://trufflesuite.com/docs/truffle/getting-started/using-the-truffle-dashboard/
  */
 
+const WebSocket = require('ws');
 require('dotenv').config();
 const { MNEMONIC, PROJECT_ID } = process.env;
 
@@ -58,6 +59,18 @@ module.exports = {
    */
 
   networks: {
+    development: {
+      host: '127.0.0.1',
+      port: 8000,
+      network_id: '11155111', // Match any network id
+    },
+    // testnet: {
+    //   // host: "localhost",
+    //   // port: 8545,
+    //   provider: () => new HDWalletProvider(MNEMONIC, "https://sepolia.infura.io/v3/7018b8d34628491fb380004b171a78cb"),
+    //   network_id: 11155111,
+    //   websocket: false,
+    // },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
@@ -103,6 +116,7 @@ module.exports = {
     // timeout: 100000
   },
 
+  contracts_directory: './contracts/',
   // Configure your compilers
   compilers: {
     solc: {
