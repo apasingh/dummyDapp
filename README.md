@@ -19,4 +19,7 @@ npm install @truffle/hdwallet-provider
 
 npm install uws //install uWebSockets (uWs) library in my Node.js project
 
+** my node was an incorrect version and i had to install nvm, and use version 18:
+nvm use 18 //but most ppl do not have this issue
+
 truffle migrate --network sepolia //to try and deploy the contract
