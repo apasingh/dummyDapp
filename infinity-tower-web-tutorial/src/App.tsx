@@ -23,7 +23,6 @@ function App() {
         {!ethereum ? (
           <Container p="lg">
             <WalletInstallation />
-            <LogsTester />
           </Container>
         ) : (<InfinityTower floors={floors}/> )}
       </div>
