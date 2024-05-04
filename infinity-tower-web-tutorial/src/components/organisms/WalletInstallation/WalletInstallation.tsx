@@ -11,7 +11,7 @@ export const WalletInstallation = () => {
           component="a"
           href="https://metamask.io/download.html"
         >
-          Meta Mask
+           Meta Mask
         </Text>
       </Text>
     </>
