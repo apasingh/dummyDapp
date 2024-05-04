@@ -8,7 +8,7 @@ export const WalletConnect =() =>{
             return <Button onClick={deactivate}> Disconnect</Button>
         } else{
             return (
-                <Group style={{ justifyContent: 'right' }}>
+                <Group style={{ justifyContent: 'center' }}>
                 <Text style={{ color: 'red' }}>Wrong Network</Text>
             <Button onClick={() => switchNetwork(Sepolia.chainId)}> Switch Network</Button>
             </Group>
