@@ -4,9 +4,12 @@ import './App.css';
 import { WalletInstallation } from "./components/organisms/WalletInstallation";
 import { WalletConnect } from "./components/organisms/WalletConnect";
 import { InfinityTower } from './components/organisms/InfinityTower';
+import { useFloors } from './hooks/Floors';
+
 
 function App() {
   const { ethereum } = window as any;
+  const { floors } = useFloors();
   return (
     // Error from before was that I didn't wrap your entire app with MantineProvider
     
@@ -20,8 +23,9 @@ function App() {
         {!ethereum ? (
           <Container p="lg">
             <WalletInstallation />
+            <LogsTester />
           </Container>
-        ) : <InfinityTower/>}
+        ) : (<InfinityTower floors={floors}/> )}
       </div>
   );
 }

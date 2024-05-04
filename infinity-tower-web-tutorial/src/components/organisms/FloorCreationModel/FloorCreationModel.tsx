@@ -41,7 +41,6 @@ export const FloorCreationModel = ({opened, onClose}:FloorCreationModelProps) =>
     return (
         <Modal opened={opened} onClose={onClose} title="Create a new floor">
             <form onSubmit={form.onSubmit(handleSubmit)}>
-            {/* <form onSubmit={(event) => handleSubmit(form.values, event)}> */}
                 <TextInput required label="Owner name" placeholder="Satoshi Nakamoto" {...form.getInputProps("ownerName")} />
                 <TextInput label="Message" placeholder="Hello World" {...form.getInputProps("message")} />
                 <TextInput label="Link" placeholder="https://usedapp-docs.netlify.app/docs" {...form.getInputProps("link")} />
