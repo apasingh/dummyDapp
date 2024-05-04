@@ -23,3 +23,23 @@ npm install uws //install uWebSockets (uWs) library in my Node.js project
 nvm use 18 //but most ppl do not have this issue
 
 truffle migrate --network sepolia //to try and deploy the contract
+
+
+# ONCE CONTRACT IS DEPLOYED
+
+npm create vite@latest infinity-tower-web-tutorial --template react-ts //choose react, choose TypeScript
+
+npm install vite
+
+npm install vite --save-dev
+
+npm run dev   //should run on localhost
+
+npm install @mantine/hooks @mantine/core @mantine/form
+
+//using dapp ethers for using hooks, now we can create our walletconnect
+npm install @usedapp/core ethers
+
+//make sure to config in main.tsx
+
+npm install normalize.css //for style in mantine
