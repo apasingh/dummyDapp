@@ -1,10 +1,20 @@
-import { Button } from "@mantine/core";
-import { useEthers } from "@usedapp/core";
+import { Button, Group, Text} from "@mantine/core";
+import { Sepolia, useEthers } from "@usedapp/core";
 
 export const WalletConnect =() =>{
-    const { activateBrowserWallet, account, deactivate} = useEthers(); //makes connection accessible in whole app
+    const { activateBrowserWallet, account, deactivate, chainId, switchNetwork} = useEthers(); //makes connection accessible in whole app
     if (account) {
-        return <Button onClick={deactivate}> Disconnect</Button>
+        if (chainId === Sepolia.chainId){
+            return <Button onClick={deactivate}> Disconnect</Button>
+        } else{
+            return (
+                <Group style={{ justifyContent: 'right' }}>
+                <Text style={{ color: 'red' }}>Wrong Network</Text>
+            <Button onClick={() => switchNetwork(Sepolia.chainId)}> Switch Network</Button>
+            </Group>
+            );
+        }
+        
     } else{
     return <Button onClick={activateBrowserWallet}> Connect to Metamask </Button>
 }
